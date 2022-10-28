@@ -8,7 +8,14 @@ export function InputBar() {
     (state) => state.appendToConversation
   );
   return (
-    <div className="inputBox">
+    <form
+      className="inputBox"
+      onSubmit={(e) => {
+        e.preventDefault();
+        appendToConversation(makeUserInput(msg));
+        setMsg("");
+      }}
+    >
       <input
         type="text"
         name="userInput"
@@ -16,15 +23,9 @@ export function InputBar() {
         onChange={(e) => setMsg(e.target.value)}
         id="userInput"
       />
-      <button
-        className="submit"
-        onClick={() => {
-          appendToConversation(makeUserInput(msg));
-          setMsg("");
-        }}
-      >
+      <button type="submit" className="submit">
         Submit
       </button>
-    </div>
+    </form>
   );
 }

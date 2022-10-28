@@ -1,9 +1,10 @@
-import { makeUserInput } from "../../utils";
+import { makeCannedResponse, makeUserInput } from "../../utils";
+
 // import HAL from "../assets/HAL.jpeg";
 import { useConversationStore } from "../store";
 import { useState } from "react";
 
-export function Chat({ system, message, options = [], action = null }) {
+export function Chat({ system, message, options = [] }) {
   const appendToConversation = useConversationStore(
     (state) => state.appendToConversation
   );
@@ -25,7 +26,9 @@ export function Chat({ system, message, options = [], action = null }) {
                   <button
                     onClick={(e) => {
                       const userInput = makeUserInput(option.message);
+                      const response = makeCannedResponse(option?.action);
                       appendToConversation(userInput);
+                      appendToConversation(response);
                       setOptionSelected(true);
                     }}
                   >

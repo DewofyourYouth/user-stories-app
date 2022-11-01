@@ -1,3 +1,5 @@
+import "./Chat.css";
+
 import { makeCannedResponse, makeUserInput } from "../utils/utils";
 
 import HAL from "../assets/HAL.jpeg";
@@ -12,19 +14,11 @@ export function Chat({ system, message, options = [] }) {
 
   const [optionSelected, setOptionSelected] = useState(false);
   const divCls = system ? "chat systemPrompt" : "chat userResponse";
-  const cls = system ? "systemHandle" : "userHandle";
   const userIcon = system ? HAL : dave;
   return (
     <div className={divCls}>
-      <div
-        style={{
-          display: "flex",
-          flexFlow: "row",
-          gap: "10px",
-          padding: "10px 0",
-        }}
-      >
-        <div className={cls}>
+      <div className="chatRow">
+        <div>
           <img src={userIcon} className={system ? "systemIcon" : "userIcon"} />
         </div>{" "}
         <div style={{ padding: "10px" }}>{message}</div>

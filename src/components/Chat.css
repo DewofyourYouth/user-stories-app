@@ -1,0 +1,44 @@
+.chatRow {
+  display: flex;
+  flex-flow: row;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.chat {
+  border-bottom: #61dafbaa 1px solid;
+  width: 90%;
+}
+
+.systemPrompt {
+  text-align: left;
+  color: grey;
+}
+
+.userHandle {
+  color: #3512d0aa;
+  font-weight: bolder;
+}
+
+.userIcon {
+  width: 50px;
+  border-radius: 50%;
+  border: 3px #61dafbaa solid;
+}
+
+.systemIcon {
+  width: 50px;
+  border-radius: 50%;
+  border: 3px coral solid;
+}
+
+.buttonGroup > ul > li {
+  display: inline-block;
+}
+
+.buttonGroup button {
+  color: bisque;
+  border: #61dafbaa 2px solid;
+  background-color: black;
+  margin: 5px;
+}

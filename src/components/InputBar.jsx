@@ -1,3 +1,5 @@
+import "./InputBar.css";
+
 import { useEffect, useState } from "react";
 
 import { makeUserInput } from "../utils/utils";

@@ -1,3 +1,5 @@
+import "./ChatPage.css";
+
 import { Chat } from "../components/Chat";
 import { InputBar } from "../components/InputBar";
 import { useConversationStore } from "../store";

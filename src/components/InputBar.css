@@ -1,0 +1,4 @@
+.inputBox > input {
+  flex-grow: 5;
+  padding: 10px;
+}

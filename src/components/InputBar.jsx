@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
 
-import { makeUserInput } from "../../utils";
-import { questionState } from "../../utils";
+import { makeUserInput } from "../utils/utils";
+import { questionState } from "../utils/utils";
 import { useConversationStore } from "../store";
+import { useProductStore } from "../store";
 
 export function InputBar() {
   const [msg, setMsg] = useState("");
   const [expected, setExpected] = useState(null);
-  const { appendToConversation, conversation, setCurrentProduct } =
-    useConversationStore((state) => state);
-
+  const [placeholder, setPlaceholder] = useState(
+    "Our chatbot doesn't understand free text yet."
+  );
+  const { appendToConversation, conversation } = useConversationStore(
+    (state) => state
+  );
+  const { setCurrentProduct } = useProductStore((state) => state);
   useEffect(() => {
     const lastConvo = conversation[conversation.length - 1];
 
     if (Object.keys(questionState).includes(lastConvo.message)) {
       setExpected(questionState[lastConvo.message]);
+      if (expected === "expectProductName") console.log(expected);
+      setPlaceholder("Please type a product name");
+    } else {
+      setExpected(null);
+      setPlaceholder("Our chatbot doesn't understand free text yet.");
     }
   }, [conversation]);
   return (
@@ -29,7 +39,7 @@ export function InputBar() {
             system: true,
             message: (
               <span>
-                Great! Your current product name is <strong>{msg}</strong>!
+                Great! Your current product is <strong>{msg}</strong>!
               </span>
             ),
           });
@@ -39,7 +49,7 @@ export function InputBar() {
       <input
         type="text"
         name="userInput"
-        placeholder="Our chatbot doesn't understand free text yet."
+        placeholder={placeholder}
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
         id="userInput"

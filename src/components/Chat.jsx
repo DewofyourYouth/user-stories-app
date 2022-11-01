@@ -1,4 +1,4 @@
-import { makeCannedResponse, makeUserInput } from "../../utils";
+import { makeCannedResponse, makeUserInput } from "../utils/utils";
 
 import HAL from "../assets/HAL.jpeg";
 import dave from "../assets/dave.jpg";
@@ -9,6 +9,7 @@ export function Chat({ system, message, options = [] }) {
   const appendToConversation = useConversationStore(
     (state) => state.appendToConversation
   );
+
   const [optionSelected, setOptionSelected] = useState(false);
   const divCls = system ? "chat systemPrompt" : "chat userResponse";
   const cls = system ? "systemHandle" : "userHandle";
@@ -24,7 +25,7 @@ export function Chat({ system, message, options = [] }) {
         }}
       >
         <div className={cls}>
-          <img src={userIcon} style={{ width: "50px", borderRadius: "50%" }} />
+          <img src={userIcon} className={system ? "systemIcon" : "userIcon"} />
         </div>{" "}
         <div style={{ padding: "10px" }}>{message}</div>
       </div>

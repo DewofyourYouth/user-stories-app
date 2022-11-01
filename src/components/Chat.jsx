@@ -1,6 +1,7 @@
 import { makeCannedResponse, makeUserInput } from "../../utils";
 
-// import HAL from "../assets/HAL.jpeg";
+import HAL from "../assets/HAL.jpeg";
+import dave from "../assets/dave.jpg";
 import { useConversationStore } from "../store";
 import { useState } from "react";
 
@@ -11,12 +12,22 @@ export function Chat({ system, message, options = [] }) {
   const [optionSelected, setOptionSelected] = useState(false);
   const divCls = system ? "chat systemPrompt" : "chat userResponse";
   const cls = system ? "systemHandle" : "userHandle";
-  const userName = system ? "HAL" : "Dave";
+  const userIcon = system ? HAL : dave;
   return (
     <div className={divCls}>
-      <p>
-        <span className={cls}>{userName}:</span> {message}
-      </p>
+      <div
+        style={{
+          display: "flex",
+          flexFlow: "row",
+          gap: "10px",
+          padding: "10px 0",
+        }}
+      >
+        <div className={cls}>
+          <img src={userIcon} style={{ width: "50px", borderRadius: "50%" }} />
+        </div>{" "}
+        <div style={{ padding: "10px" }}>{message}</div>
+      </div>
       {options.length > 0 && (
         <div className="buttonGroup">
           <ul>

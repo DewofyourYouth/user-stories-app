@@ -46,3 +46,7 @@ export const makeCannedResponse = (action) => {
   const response = cannedResponses[action];
   return makeSystemResponse(response.message, response?.options ?? []);
 };
+
+export const questionState = {
+  "Awesome! What would you like to call this new product?": "expectProductName",
+};

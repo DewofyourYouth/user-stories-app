@@ -31,11 +31,12 @@ body::-webkit-scrollbar-thumb {
 
 .chatArea {
   display: flex;
-  flex-flow: column;
+  flex-flow: column-reverse;
   height: 75vh;
   width: 100%;
   padding: 2rem;
   text-align: left;
+  overflow: hidden;
 }
 
 .chatBox > h1 {

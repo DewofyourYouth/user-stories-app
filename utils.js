@@ -22,10 +22,11 @@ export const firstPrompt = {
 
 const cannedResponses = {
   getProductList: {
-    message: "Great! Which product would you like to review?",
+    message: "Great! Which of your products would you like to review?",
     options: [
       { key: 1, message: "Peanut Butter and Jelly Sandwich Maker" },
       { key: 2, message: "Flux capacitor" },
+      { key: 3, message: "Chitty Chitty Bang Bang" },
     ],
   },
   requestProductName: {

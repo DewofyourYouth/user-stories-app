@@ -19,6 +19,7 @@ export function InputBar() {
       <input
         type="text"
         name="userInput"
+        placeholder="Our chatbot doesn't understand free text yet."
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
         id="userInput"

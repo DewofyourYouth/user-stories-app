@@ -4,17 +4,17 @@ export const firstPrompt = {
   options: [
     {
       key: 1,
-      message: "I would like to make a new product.",
+      message: "I would like to make a new product, HAL.",
       action: "requestProductName",
     },
     {
       key: 2,
-      message: "I would like to review and / or modify a product.",
+      message: "I would like to review and / or modify a product, HAL.",
       action: "getProductList",
     },
     {
       key: 3,
-      message: "I would like info about the process.",
+      message: "I would like info about the process, HAL.",
       action: "getInfoList",
     },
   ],

@@ -32,7 +32,15 @@ const cannedResponses = {
   requestProductName: {
     message: "Awesome! What would you like to call this new product?",
   },
-  getInfoList: { message: "Sure! What would you like to know?" },
+  getInfoList: {
+    message: "Sure! What would you like to know?",
+    options: [
+      { key: 1, message: "frequently asked questions" },
+      { key: 2, message: "what are black holes?" },
+      { key: 3, message: "am I adopted?" },
+      { key: 4, message: "what is a HAL 9000?" },
+    ],
+  },
 };
 
 export const makeUserInput = (message) => ({ system: false, message });

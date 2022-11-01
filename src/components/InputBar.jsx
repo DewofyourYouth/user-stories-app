@@ -9,7 +9,7 @@ export function InputBar() {
   const [msg, setMsg] = useState("");
   const [expected, setExpected] = useState(null);
   const [placeholder, setPlaceholder] = useState(
-    "Our chatbot doesn't understand free text yet."
+    "HAL doesn't understand free text yet."
   );
   const { appendToConversation, conversation } = useConversationStore(
     (state) => state
@@ -23,7 +23,7 @@ export function InputBar() {
       setPlaceholder("Please type a product name");
     } else {
       setExpected(null);
-      setPlaceholder("Our chatbot doesn't understand free text yet.");
+      setPlaceholder("HAL doesn't understand free text yet.");
     }
   }, [conversation]);
   return (

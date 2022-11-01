@@ -17,7 +17,6 @@ export function InputBar() {
   const { setCurrentProduct } = useProductStore((state) => state);
   useEffect(() => {
     const lastConvo = conversation[conversation.length - 1];
-
     if (Object.keys(questionState).includes(lastConvo.message)) {
       setExpected(questionState[lastConvo.message]);
       if (expected === "expectProductName") console.log(expected);

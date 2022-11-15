@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: DewofyourYouth/user-stories-app
 spec:
-  type: other
-  lifecycle: unknown
+  type: webapp
+  lifecycle: experimental
   owner: dewofyouryouth

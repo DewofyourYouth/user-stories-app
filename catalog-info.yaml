@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: user-stories-app
+  annotations:
+    github.com/project-slug: DewofyourYouth/user-stories-app
+spec:
+  type: other
+  lifecycle: unknown
+  owner: dewofyouryouth
